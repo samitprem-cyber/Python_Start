@@ -1,5 +1,5 @@
 #Leet_code_PRactice
-
+#Q1
 # Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
 # Symbol       Value
@@ -43,18 +43,62 @@
 # 1 <= s.length <= 15
 # s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 # It is guaranteed that s is a valid roman numeral in the range [1, 3999].
-def romanToInt( s: str) -> int:
-        # print(s)
-        roman = {"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
-        total = 0
-        reversed = s[::-1]
-        previous = 0
-        for i in reversed:
-                if roman[i] >= previous:
-                        total += roman[i]
-                else:
-                        total -= roman[i]
-                previous = roman[i]
-        return total
-s="MCMXCIV"
-print(romanToInt(s))
+# def romanToInt( s: str) -> int:
+#         # print(s)
+#         roman = {"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
+#         total = 0
+#         reversed = s[::-1]
+#         previous = 0
+#         for i in reversed:
+#                 if roman[i] >= previous:
+#                         total += roman[i]
+#                 else:
+#                         total -= roman[i]
+#                 previous = roman[i]
+#         return total
+# s="MCMXCIV"
+# print(romanToInt(s))
+
+
+
+#Q2
+# Write a function to find the longest common prefix string amongst an array of strings.
+
+# If there is no common prefix, return an empty string "".
+
+ 
+
+# Example 1:
+
+# Input: strs = ["flower","flow","flight"]
+# Output: "fl"
+# Example 2:
+
+# Input: strs = ["dog","racecar","car"]
+# Output: ""
+# Explanation: There is no common prefix among the input strings.
+ 
+
+# Constraints:
+
+# 1 <= strs.length <= 200
+# 0 <= strs[i].length <= 200
+# strs[i] consists of only lowercase English letters if it is non-empty.
+
+def longestCommonPrefix(strs: list[str]) -> str:
+    for str_index in range(len(strs)):
+        k=strs[str_index]
+        print(strs[str_index])
+        for c_index in range(len(strs[str_index])):
+            print(k[0:c_index])
+            for c2_index in range(len(strs[str_index])): 
+                print(strs[str_index][0:c2_index])
+        #     # chk = strs([str_index][0:i])
+        #     # print(c_index)
+
+
+    return strs[str_index]
+
+strs = ["flower","flow","flight"]
+k=longestCommonPrefix(strs)
+
